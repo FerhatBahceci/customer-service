@@ -1,0 +1,3 @@
+spring:
+  liquibase:
+    changeLog: "classpath:db/migration/my-master-change-log.json"
