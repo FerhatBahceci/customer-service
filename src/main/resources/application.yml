@@ -1,6 +1,6 @@
 spring:
   liquibase:
-    changeLog: "classpath:db/migration/my-master-change-log.json"
+    changeLog: "classpath:db/changelog/changelog-master.yml"
   r2dbc:
     url: "r2dbc:postgresql://localhost:5432/customer_db"
     username: "customer_db"

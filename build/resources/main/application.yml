@@ -1,7 +1,0 @@
-spring:
-  liquibase:
-    changeLog: "classpath:db/migration/my-master-change-log.json"
-  r2dbc:
-    url: "r2dbc:postgresql://localhost:5432/customer_db"
-    username: "customer_db"
-    password: "bahceci"

@@ -1,5 +1,0 @@
-databaseChangeLog:
-  - include:
-      file: migrations/001-add-customer-table.yml
-  - include:
-      file: migrations/002-add-address-table.yml
