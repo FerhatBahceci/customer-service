@@ -9,7 +9,7 @@ import org.springframework.data.annotation.Id;
 public class Address {
 
     @Id
-    private Long customerId;
+    private Long id;
     private String streetName;
     private String streetNumber;
     private String postCode;

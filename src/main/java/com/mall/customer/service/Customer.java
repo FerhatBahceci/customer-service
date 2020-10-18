@@ -3,7 +3,6 @@ package com.mall.customer.service;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
-
 import java.time.LocalDate;
 
 @Getter

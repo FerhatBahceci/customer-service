@@ -50,6 +50,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 	testImplementation 'io.rest-assured:spring-web-test-client'
+	testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-stub-runner'
 	testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-verifier'
 }
 
@@ -58,11 +59,14 @@ dependencyManagement {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
 }
-/*
+
 contracts {
-	targetFramework = TestFramework.JUNIT5
 	testMode = 'WebTestClient'
-}*/
+	baseClassMappings {
+		baseClassMapping(".*", "com.mall.customer.service.PUTBASE")
+	}
+	testFramework = TestFramework.JUNIT5
+}
 
 test {
 	useJUnitPlatform()

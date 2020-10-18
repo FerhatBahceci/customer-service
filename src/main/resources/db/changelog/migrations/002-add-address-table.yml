@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id:  addAddressTable
+      changes:
+        - createTable:
+            tableName:  address
+            columns:
+              - column:
+                  id:  id
+                  type:  bigint
+                  autoIncrement:  true
+                  constraints:
+                    primaryKey:  true
+                    nullable:  false
+              - column:
+                  name:  streetName
+                  type:  varchar(50)
+              - column:
+                  name:  streetNumber
+                  type:  int
+              - column:
+                  name:  post_code
+                  type:  int
+              - column:
+                  name:  postal_city
+                  type:  int
+  - changeSet:
+      id:  addForeignKeyConstraintOnAddress
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames:  id
+            baseTableCatalogName:  cat
+            baseTableName:  address
+            baseTableSchemaName:  public
+            constraintName:  fk_address_customer
+            deferrable:  true
+            initiallyDeferred:  true
+            onDelete:  CASCADE
+            onUpdate:  RESTRICT
+            referencedColumnNames:  id
+            referencedTableCatalogName:  cat
+            referencedTableName:  customer
+            referencedTableSchemaName:  public
+            validate:  true
